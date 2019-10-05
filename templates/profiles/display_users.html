@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+ 
+{% block roomcontent %}
+
+{% if user.room_admin %}
+<h2>Admin Details</h2>
+<div>
+  <p>{{user.room_admin.first_name}}</p>
+  <p>{{user.room_admin.last_name}}</p>
+  <p>{{user.room_admin.email}}</p>
+  <p>{{user.room_admin.profile.mobile}}</p>
+  <p>{{user.room_admin.profile.occupation}}</p>
+  <p>{{user.room_admin.profile.birth_date}}</p>
+</div>
+{% endif %}
+<h2>Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Occupation</th>
+      <th>Date of Birth</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for user in user_list %}
+     <tr>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.profile.mobile}}</td>
+      <td>{{user.profile.occupation}}</td>
+      <td>{{user.profile.birth_date}}</td>
+     </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

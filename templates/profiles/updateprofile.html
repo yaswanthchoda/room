@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+<h2>Update Profile</h2>
+<form method="post">
+   {% csrf_token %}
+   {% for field in user_form %}
+     <div>
+       {{ field.label_tag }}<br>
+       {{ field }}
+       {% for error in field.errors %}
+         <p style="color: red">{{ error }}</p>
+       {% endfor %}
+     </div>
+   {% endfor %}
+   {% for field in profile_form %}
+     <div>
+       {{ field.label_tag }}<br>
+       {{ field }}
+       {% for error in field.errors %}
+         <p style="color: red">{{ error }}</p>
+       {% endfor %}
+     </div>
+   {% endfor %}
+   <button type="submit">Save changes</button>
+ </form>
+{% endblock %}

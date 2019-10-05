@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+ 
+{% block roomcontent %}
+<h2>Room Details</h2>
+<p>{{room_details}}</p>
+   {% for room in room_details %}
+     <div>
+      {{room.id}}<br>
+      {{room.room_name}}<br>
+      {{room.room_address}}
+     </div>
+   {% endfor %}
+
+   {% for room in room_details %}
+     <div>
+      {{room.id}}<br>
+      {{room.room_name}}<br>
+      {{room.room_address}}
+     </div>
+   {% endfor %}
+
+   <h2>Add Records</h2>
+	<form method="post">
+	   {% csrf_token %}
+	   {% for field in form %}
+	     <div>
+	       {{ field.label_tag }}<br>
+	       {{ field }}
+	       {% for error in field.errors %}
+	         <p style="color: red">{{ error }}</p>
+	       {% endfor %}
+	     </div>
+	   {% endfor %}
+	   <button type="submit">Save changes</button>
+	 </form>
+{% endblock %}

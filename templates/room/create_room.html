@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+ 
+{% block roomcontent %}
+<h2>Create Room</h2>
+<form method="post">
+   {% csrf_token %}
+   {% for field in room_form %}
+     <div>
+       {{ field.label_tag }}<br>
+       {{ field }}
+       {% for error in field.errors %}
+         <p style="color: red">{{ error }}</p>
+       {% endfor %}
+     </div>
+   {% endfor %}
+   <button type="submit">Save changes</button>
+ </form>
+ <p><a href="{% url 'display_users' %}">display_users</a></p>
+ <p><a href="{% url 'create_user' %}">create_user</a></p>
+
+ <h2>Room Details</h2>
+<div>
+   {% for room in all_rooms %}
+     <div>
+      {{room}}<br>
+      {{room.room_name}}<br>
+      {{room.room_address}}
+     </div>
+   {% endfor %}
+ </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: yaswanth.resource@gmail.com
+Date: Sat, 28 Sep 2019 02:26:16 -0000
+Message-ID: <156963757642.5597.9155469964600472853@itrois039-H81M-S>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/Ng/5a4-7901054767f11e495b98/
+
+Your username, in case you've forgotten: yaswanth.resource@gmail.com
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

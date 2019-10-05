@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+ 
+{% block roomcontent %}
+<h2>Room Details</h2>
+<form method="post">
+   {% for room in all_rooms %}
+     <div>
+      {{room}}<br>
+      {{room.room_name}}<br>
+      {{room.room_address}}
+     </div>
+   {% endfor %}
+ </form>
+{% endblock %}
